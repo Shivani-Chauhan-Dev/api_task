@@ -77,6 +77,7 @@ def find_task(task_id):
 
 @app.route("/task/<int:task_id>",methods=["Put"])
 def update_task(task_id):
+    # current_date=str(datetime.datetime.now())
     task=Task.query.get(task_id)
     a=(json.loads(request.data))
     name =a.get("name")
@@ -86,6 +87,8 @@ def update_task(task_id):
     task.name =name
     task.comments=comments
     task.status=status
+
+
     db.session.commit()
     new_data=({"id":task.id,"name":task.name,"comments":task.comments,"status":task.status,"created":task.created,"lastupdate":task.lastupdated})
 
