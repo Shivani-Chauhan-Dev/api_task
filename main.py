@@ -24,15 +24,15 @@ class Task(db.Model):
     created=db.Column(db.String(80))
     lastupdated=db.Column(db.String(80))
 
-    # def to_dict(self):
-    #     return {
-    #         'id': self.id,
-    #         'name': self.name,
-    #         'comments':self.comments,
-    #         'status': self.status,
-    #         'created': self.created,
-    #         'lastupdated': self.lastupdated
-    #     }
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'comments':self.comments,
+            'status': self.status,
+            'created': self.created,
+            'lastupdated': self.lastupdated
+        }
 
 with app.app_context():
     db.create_all()
