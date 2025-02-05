@@ -47,7 +47,8 @@ def creat_task():
     name =a.get("name")
     comments=a.get("comments")
     status=a.get("status")
-    id=uuid.uuid1().int>>64
+    id = uuid.uuid4().int % (2**63 - 1) 
+    # id=uuid.uuid1().int>>64
     created=current_date
     lastupdate=current_date
 
