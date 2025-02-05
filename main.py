@@ -17,12 +17,12 @@ db = SQLAlchemy()
 db.init_app(app)
 
 class Task(db.Model):
-    id = db.Column(db.Integer,primary_key=True)
-    name = db.Column(db.String(500))
-    comments=db.Column(db.String(50))
-    status=db.Column(db.String(10))
-    created=db.Column(db.String(20))
-    lastupdated=db.Column(db.String(20))
+    id = db.Column(db.BigInteger,primary_key=True)
+    name = db.Column(db.String(60))
+    comments=db.Column(db.String(100))
+    status=db.Column(db.String(80))
+    created=db.Column(db.String(80))
+    lastupdated=db.Column(db.String(80))
 
     # def to_dict(self):
     #     return {
